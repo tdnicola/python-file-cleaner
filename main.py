@@ -41,7 +41,8 @@ for folder in os.listdir(health_center_path):
                         for line in fin:
                             # line = line.lower() # makes everything lower case, easier to catch words but alters the file to lowercase.
                             for word in replace_these_words:
-                             fout.write(line)
+                                line = line.replace(word, "||")
+                            fout.write(line)
                     try:
                         os.rename(file_path, archive_file_path)
                     except:
